@@ -80,7 +80,19 @@ The system uses **ESP-NOW**, a low-latency peer-to-peer wireless protocol, to tr
 - Nearest-level symbol quantization  
 - I/Q to bit conversion  
 - Word reconstruction  
-- Debug and performance logging  
+- Debug and performance logging
+
+---
+
+## Source Code
+
+### Transmitter Code
+The transmitter ESP32 collects binary input using push buttons, maps the data to 16-QAM symbols, and transmits the symbols wirelessly using ESP-NOW.
+`transmitter/tx_qam_esp32.ino`
+
+### Receiver Code
+The receiver ESP32 demodulates the received QAM symbols using nearest-neighbor detection, reconstructs the transmitted bit stream, and displays decoded data via the serial monitor.
+`receiver/rx_qam_esp32.ino`
 
 ---
 
